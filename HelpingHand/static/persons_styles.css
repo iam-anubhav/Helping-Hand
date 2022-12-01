@@ -1,0 +1,47 @@
+body{
+      background-image : url("/static/images/4.jpg");
+      background-repeat : no-repeat;
+      background-size : cover;
+      }
+          .col-md-3
+          {
+          display: inline-block;
+          margin-left:-4px;
+
+          }
+          .search-button {
+          height : 40px;
+          width : 110px;
+          background-color : #2a9ae9;}
+
+          .search{
+          height : 50px;
+          width : 400px;
+          align : center;
+          margin-top : 5%;
+          margin-left : 38%;
+          }
+          .container{
+          margin-top : 10px;}
+
+          .carousel-indicators .active {
+          background-color: blue;
+            }
+          .col-md-3 img{
+          width:100%;
+          height:auto;
+          }
+          body .carousel-indicator li{
+          background-color: blue;
+          }
+          body .carousel-indicators{
+          bottom: 0;
+          }
+          body .carousel-control-prev-icon,
+          body .carousel-control-next-icon{
+          background-color: blue;
+          }
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }

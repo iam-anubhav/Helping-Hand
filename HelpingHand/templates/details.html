@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <title>Details</title>
+         {% load static %}
+        <link rel="stylesheet" href="{% static 'details_styles.css' %}">
+         <style>
+              body{
+    margin: 0;
+    padding:0;
+    font-family: sans-serif;
+    background-image: url("/static/images/hh 3.jpg");
+    background-size: 100% 100%;
+    background-position: center ;
+    text-transform: uppercase;
+}
+         </style>
+     </head>
+     <body>
+
+        <div class="sign-up-form">
+            <h1>Enter Details</h1>
+            <form action="/details" method="post">
+                {% csrf_token %}
+                <img src="/static/images/pngwing.png">
+               <input class="file-upload-input" type="file" onchange="readURL(this)" accept="Image/" name="image">
+                <input type="text" class="input-box" placeholder="Enter City" name="address">
+<!--                <input type="text" class="input-box" placeholder="Street" name="street">-->
+<!--                <input type="text" class="input-box" placeholder="City" name="city">-->
+<!--                <input type="text" class="input-box" placeholder="State" name="state">-->
+                <textarea rows = "5" cols = "33" placeholder="Description" name="description"></textarea>
+                <button type="submit" class="google-btn">Submit</button><br><br>
+                 {% for msg in messages %}
+                    {{ msg }}
+                {% endfor %}
+            </form>
+        </div>
+     </body>
+</html>

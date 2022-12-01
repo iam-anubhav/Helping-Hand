@@ -1,0 +1,49 @@
+body{
+      background-image : url("/static/images/4.jpg");
+      background-repeat : no-repeat;
+      background-size : cover;
+      }
+      .col-md-3
+      {
+      display: inline-block;
+      margin-left:-4px;
+
+      }
+      .search{
+      align : center;
+      margin-top : 8%;
+      margin-left : 42%;
+      }
+      .container{
+      margin-top : 10px;}
+
+      .container h1{
+      margin-top : 8%;
+      text-align : center;
+      color : white;
+      font-size : 3rem;
+      }
+
+      .carousel-indicators .active {
+      background-color: blue;
+        }
+      .col-md-3 img{
+      width:100%;
+      height:auto;
+      }
+      body .carousel-indicator li{
+      background-color: blue;
+      }
+      body .carousel-indicators{
+      bottom: 0;
+      }
+      body .carousel-control-prev-icon,
+      body .carousel-control-next-icon{
+      background-color: blue;
+      }
+       body .no-padding{
+       padding-left: 0,
+       padding-right: 0;
+       }
+       .container h1{
+       align : center;}

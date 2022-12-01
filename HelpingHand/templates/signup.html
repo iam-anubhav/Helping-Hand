@@ -1,0 +1,38 @@
+<!Doctype html>
+<html lang="en">
+     <head>
+        <title>Sign Up</title>
+         {% load static %}
+        <link rel="stylesheet" href="{% static 'signup_styles.css' %}">
+         <style>
+             body{
+    margin: 0;
+    padding:0;
+    font-family: sans-serif;
+    background-image: url('/static/images/hh3.jpg');
+    background-repeat: no-repeat;
+    background-size : 100% 100%;
+    text-transform: uppercase;
+}
+         </style>
+     </head>
+     <body>
+        <div class="sign-up-form">
+            <h1>Sign up now</h1>
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" class="input-box" placeholder="Enter Your Name" name="name">
+                <input type="number" class="input-box" placeholder="Phone Number" name="phone">
+                <input type="email" class="input-box" placeholder="Your Email" name="email">
+                <input type="password" class="input-box" placeholder="Your Password" name="password">
+                <button type="submit" class="signup-btn">Sign up</button>
+                <p > Already have an account? <a href="{% url 'signin' %}">Sign in</a></p><br><br>
+
+                {% for msg in messages %}
+                    {{ msg }}
+                {% endfor %}
+            </form>
+        </div>
+     </body>
+</html>

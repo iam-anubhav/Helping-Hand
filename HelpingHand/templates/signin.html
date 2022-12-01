@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+     <head>
+         <title>Sign In</title>
+         {% load static %}
+         <link rel="stylesheet" href="{% static 'signin_styles.css' %}">
+         <style>
+             body{
+            font-family: sans-serif;
+            background-image: url("/static/images/hh3.jpg");
+            background-repeat: no-repeat;
+            background-size : 100% 119%;
+            text-transform: uppercase;
+            }
+         </style>
+     </head>
+     <body>
+        <div class="sign-up-form">
+            <h1>Sign in now</h1>
+            <form action="/options" method="get">
+                {% csrf_token %}
+                <input type="email" class="input-box" placeholder="Your Email" name="email">
+                <input type="password" class="input-box" placeholder="Your Password" name="password">
+                <button type="submit" class="signup-btn">Sign in</button>
+                <hr>
+                <p1 class="forgot password">Forgot Password? </p1>
+                <p> Not a member! <a href="{% url 'signup' %}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>Sign Up</a></p>
+
+            </form>
+        </div>
+     </body>
+</html>
+

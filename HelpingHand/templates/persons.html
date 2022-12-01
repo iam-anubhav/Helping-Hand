@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'persons_styles.css' %}">
+    <title>Needy Persons</title>
+  </head>
+  <body>
+  {% load static %}
+
+  <form action="/filter" method="get">
+      {% csrf_token %}
+      <input type="text" class="search" placeholder="Enter City" name="location">-->
+      <button type='submit'  class="search-button">Search</button>
+  </form>
+
+<!--      <input type="text" class="search" placeholder="Enter location">-->
+<!--      <a href="{% url 'filter' %}" class="search-button">Search</a>-->
+
+  <div class="container">
+    <h1 style="margin-top:3%;font-size:3rem;text-align:center; color : white">All Needy Persons</h1>
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+
+       {% for i in range %}
+      <li data-target="#demo" data-slide-to="{{i}}" ></li>
+      {% endfor %}
+    </ul>
+
+    <!--Slideshow starts here -->
+    <div class="container carousel-inner no-padding">
+
+      <div class="carousel-item active">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='/static/images/avtaar.png' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{person.0.address}}</h5>
+                <p class="card-text">{{person.0.description}}</p>
+<!--                <a href="#" class="btn btn-primary">Add to Cart</a>-->
+            </div>
+          </div>
+       </div>
+
+
+        {% for i in person|slice:"1:"%}
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='/static/images/avtaar.png' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{i.address}}</h5>
+              <p class="card-text">{{i.description}}</p>
+<!--              <a href="#" class="btn btn-primary">Add To Cart</a>-->
+            </div>
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+      </div><div class="carousel-item">
+        {% endif %}
+
+        {% endfor %}
+    </div>
+
+
+
+</div>
+</div>
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </div>
+  </body>
+</html>
