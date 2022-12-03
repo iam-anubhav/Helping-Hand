@@ -9,7 +9,7 @@
     margin: 0;
     padding:0;
     font-family: sans-serif;
-    background-image: url("/static/images/hh 3.jpg");
+    background-image: url("/static/images/hh3.jpg");
     background-size: 100% 100%;
     background-position: center ;
     text-transform: uppercase;
@@ -20,7 +20,7 @@
 
         <div class="sign-up-form">
             <h1>Enter Details</h1>
-            <form action="/details" method="post">
+            <form action="" method="post">
                 {% csrf_token %}
                 <img src="/static/images/pngwing.png">
                <input class="file-upload-input" type="file" onchange="readURL(this)" accept="Image/" name="image">
